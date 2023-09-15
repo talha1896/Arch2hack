@@ -44,5 +44,5 @@ This script provide two options
 
 ## Feedback
 
-If you have any feedback, please reach out to us at talhagit29@gmail.com
+If you have any feedback, please reach out to me at talhagit29@gmail.com
 
