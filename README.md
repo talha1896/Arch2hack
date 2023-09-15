@@ -1,2 +1,5 @@
 # Arch2hack
- convert Arch lnux into hacking os
+ This script convert Arch lnux into hacking os
+
+Features
+       s
