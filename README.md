@@ -2,4 +2,7 @@
  This script convert Arch lnux into hacking os
 
 Features
-       s
+Install hardware driver
+Install Desktop with basic apps
+Install mostly used hacking tool
+Absolutly minimal
