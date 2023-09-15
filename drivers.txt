@@ -1,0 +1,5 @@
+intel-ucode
+xf86-video-intel
+gvfs 
+ntfs-3g 
+
