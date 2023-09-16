@@ -10,9 +10,9 @@ blackarch/tor-browser
 blackarch/macchanger 	
 blackarch/whatweb 	
 blackarch/dirb
-blackarch/owasp-bywaf
 blackarch/httrack 	
 blackarch/hash-identifier
 apache
 whois
 ettercap-gtk
+zaproxy
