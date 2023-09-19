@@ -27,3 +27,4 @@ wget
 virtualbox
 tldr
 locate
+vim
