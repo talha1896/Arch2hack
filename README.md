@@ -20,7 +20,7 @@ Install by running
 git clone https://github.com/talha1896/Arch2hack.git  
 cd Arch2hack
 chmod +x install
-sudo ./install
+./install
 ```
     
 ## Usage
