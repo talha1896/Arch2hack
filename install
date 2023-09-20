@@ -8,12 +8,6 @@ G=$(tput setaf 2)
 B=$(tput setaf 33)
 N=$(tput sgr0)
 
-# check if script is running as root
-if [ "$EUID" -ne 0 ]; then
-   echo -e "${R}${L}This script must be run as root.kindly run this script as root${N}"
-exit 1
-fi
-
 # check is distribution is arch based
 file="/etc/os-release"
    if  grep -q "Arch\|Garuda\|Manjaro\|Endeavours" $file ; then
@@ -42,16 +36,16 @@ sleep 3s
 
 ################### magic start from here #######################
 # replace pacman.conf file
-rm /etc/pacman.conf
+sudo rm /etc/pacman.conf
 if [ $? -eq 1 ];then
 exit 1
 else
-cp pacman.conf /etc/
+sudo cp pacman.conf /etc/
 fi
 
 # update Arch repo
 echo -e "${G}${L}[+]${N} Updating ${B}${L}Arch repo${N}"
-   pacman -Sy
+  sudo pacman -Sy
 
 # dependencies for black arch repo
 echo -e "${G}${L}[+]${N} ${B}${L}checking dependices${N}"
@@ -63,7 +57,7 @@ echo -e "${G}${L}[+]${N} ${B}${L}curl found${N}"
 else 
      echo -e "${G}${L}[-]${N} ${B}${L}curl not found${N}"
      echo -e "${G}${L}[+]${N} ${B}${L}Installing${N}"
-     pacman -S curl --noconfirm
+    sudo pacman -S curl --noconfirm
 echo -e "${G}${L}[+]${N} ${G}${L}Installed succesfully{N}"
 fi
 
@@ -72,8 +66,8 @@ echo -e "${G}${L}[+]${N} ${G}${L}Installing black arch keyring${N}"
 curl -O https://blackarch.org/strap.sh
 echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
 chmod +x strap.sh
-./strap.sh
-pacman -Syu --noconfirm
+sudo ./strap.sh
+sudo pacman -Syu --noconfirm
 echo -e "${G}${L}[+]${N} ${G}${L}Black arch repo installed succesfully${N}"
 echo -e "${G}${L}[+]${N} ${G}${L}Process 1/3 completed succesfully${N}"
 sleep 9s
@@ -98,7 +92,7 @@ sleep 2s
 drivers_file="drivers.txt"
 while read -r drivers
 do 
-   pacman -S $drivers --noconfirm
+  sudo pacman -S $drivers --noconfirm
    echo "${L}${G}$drivers Installed${N}"
 done < $drivers_file
       echo "${L}${G}[+]${N} ${B}${L}Installing Drivers completed${N}"
@@ -111,13 +105,13 @@ done < $drivers_file
 pkgs_file="desktop_packages.txt"
 while read -r pkgs
 do
-  pacman -S $pkgs --noconfirm
+  sudo pacman -S $pkgs --noconfirm
   echo "${L}${G}$pkgs Installed${N}"
 done < $pkgs_file
 
 # Enable services
-systemctl enable lxdm
-systemctl enable NetworkManager.service
+sudo systemctl enable lxdm
+sudo systemctl enable NetworkManager.service
 
       echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
       sleep 2s
@@ -126,7 +120,7 @@ systemctl enable NetworkManager.service
 tools_file="hacking_tools"
 while read -r tools
 do
-  pacman -S $tools --noconfirm
+  sudo pacman -S $tools --noconfirm
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
 echo "${L}${G}All Done${N}"
@@ -140,7 +134,7 @@ sleep 3s
 tools_file="hacking_tools"
 while read -r tools
 do
-  pacman -S $tools --noconfirm
+  sudo pacman -S $tools --noconfirm
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
 echo "${L}${G}All Done${N}"
@@ -151,7 +145,7 @@ esac
 
 # config apache2 webserver
 echo "${L}${B}configuring apache2 webserver${N}"
-sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
+sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
 echo "${L}${B}Done${N}"
 echo "${L}${G}Everything done correctly.you can reboot your pc${N}"
 
