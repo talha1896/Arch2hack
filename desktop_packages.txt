@@ -28,3 +28,4 @@ virtualbox
 tldr
 locate
 vim
+gnome-keyring
