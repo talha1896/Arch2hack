@@ -6,22 +6,6 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
-<url>
-  <loc>https://github.com/talha1896/Arch2hack</loc>
-  <lastmod>2023-09-22T13:03:44+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://github.com/talha1896/Arch2hack/issues</loc>
-  <lastmod>2023-09-22T13:03:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://github.com/talha1896/Arch2hack/pulls</loc>
-  <lastmod>2023-09-22T13:03:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 <url>
   <loc>https://github.com/talha1896/Arch2hack/actions</loc>
   <lastmod>2023-09-22T13:03:44+00:00</lastmod>
