@@ -24,13 +24,16 @@ chmod +x install
 ```
     
 ## Usage
-
 This script provide two options
 - {1} lxde Desktop + basic apps + hacking tools 
 - This option is useful for Arch minimal installation because it will install everything from scratch from drivers to fully working Desktop.
 
 - {2} hacking tools only
 - It wil install hacking tools only.suitable for other Arch base distros like manjaro or garuda.
+
+# Note
+Before running this script it is recommended to Enable multilib repository.
+you can ebable by removing #comments from pacman.conf file located at /etc/pacman.conf as sudo user.
 
 
 
