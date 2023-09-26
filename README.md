@@ -23,6 +23,12 @@ chmod +x install
 ./install
 ```
     
+# Note
+Before running this script it is recommended to Enable multilib repository.
+you can enable by 
+- removing #comments from pacman.conf file located at /etc/pacman.conf as sudo user.
+
+
 ## Usage
 This script provide two options
 - {1} lxde Desktop + basic apps + hacking tools 
@@ -30,12 +36,6 @@ This script provide two options
 
 - {2} hacking tools only
 - It wil install hacking tools only.suitable for other Arch base distros like manjaro or garuda.
-
-# Note
-Before running this script it is recommended to Enable multilib repository.
-you can ebable by removing #comments from pacman.conf file located at /etc/pacman.conf as sudo user.
-
-
 
 ## Tips
 
