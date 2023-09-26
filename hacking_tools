@@ -12,6 +12,8 @@ blackarch/whatweb
 blackarch/dirb
 blackarch/httrack 	
 blackarch/hash-identifier
+
+# tools that i cannot find in blackarch repo
 apache
 whois
 ettercap-gtk

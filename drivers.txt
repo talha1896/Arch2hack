@@ -1,5 +1,12 @@
+# for intel
 intel-ucode
 xf86-video-intel
+
+# for amd
+#amd-ucode
+#xf86-video-amd
+
+# driver for ntfs filesystem
 gvfs 
 ntfs-3g 
 

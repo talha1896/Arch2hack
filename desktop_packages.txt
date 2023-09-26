@@ -1,30 +1,57 @@
+# display server
 xorg
+
+# audio driver
 pulseaudio
-network-manager
-network-manager-applet
-lxsession
+
+# desktop
 nordic-darker-theme 
 adwaita-icon-theme
+lxsession
+lxappearance
+lxde-common
 gpicview
 lxappearance
 lxde-common
-lxdm
 lxmusic
 lxpanel
 lxrandr
 lxterminal
 openbox
+
+# display manager default is lxdm
+lxdm
+
+# basic apps
 pcmanfm
 firefox
 gnome-disk-utility
 vlc
-htop
-neofetch
 xarchiver
 code
 onboard
+network-manager
+network-manager-applet
+
+# terminal utilities
+htop
+neofetch
 wget
 tldr
 locate
 vim
 gnome-keyring
+
+
+
+
+
+
+
+
+
+
+
+
+
+

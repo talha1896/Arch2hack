@@ -84,6 +84,10 @@ sleep 2s
 drivers_file="drivers.txt"
 while read -r drivers
 do 
+ # Check if the line starts with a '#' (comment)
+  if [[ $drivers =~ ^# ]]; then
+    continue  # Skip lines starting with #
+  fi
   sudo pacman -S $drivers --noconfirm
    echo "${L}${G}$drivers Installed${N}"
 done < $drivers_file
@@ -97,6 +101,10 @@ done < $drivers_file
 pkgs_file="desktop_packages.txt"
 while read -r pkgs
 do
+  # Check if the line starts with a '#' (comment)
+  if [[ $pkgs =~ ^# ]]; then
+    continue  # Skip lines starting with #
+  fi
   sudo pacman -S $pkgs --noconfirm
   echo "${L}${G}$pkgs Installed${N}"
 done < $pkgs_file
@@ -117,6 +125,10 @@ current_user=$(whoami)
 tools_file="hacking_tools"
 while read -r tools
 do
+ # Check if the line starts with a '#' (comment)
+  if [[ $tools =~ ^# ]]; then
+    continue  # Skip lines starting with #
+  fi
   sudo pacman -S $tools --noconfirm
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
@@ -131,6 +143,10 @@ sleep 3s
 tools_file="hacking_tools"
 while read -r tools
 do
+ # Check if the line starts with a '#' (comment)
+  if [[ $tools =~ ^# ]]; then
+    continue  # Skip lines starting with #
+  fi
   sudo pacman -S $tools --noconfirm
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
