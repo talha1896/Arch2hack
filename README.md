@@ -27,7 +27,7 @@ sudo ./install
 Before running this script it is recommended to Enable multilib repository.
 you can enable by 
 - removing #comments from pacman.conf file located at 
--/etc/pacman.conf 
+- /etc/pacman.conf 
 as sudo user.
 
 
