@@ -1,0 +1,23 @@
+#!/bin/bash
+clear
+
+# color code
+L=$(tput bold)
+R=$(tput setaf 1)
+G=$(tput setaf 2)
+B=$(tput setaf 33)
+N=$(tput sgr0)
+
+echo "${G}${L}[+] Optional steps  ......${N}"
+echo "${B}${L}[+] Do you want to anable apche server  ......${N}"
+read -p "Enter your choice y/n:" choice
+case $choice in
+   y)
+   sudo systemctl enable httpd
+echo "${G}${L}[+] Enabled  ......${N}"
+   ;;
+   n)
+   echo "${G}${L}[-] Disabled  ......${N}"
+   ;;
+esac
+

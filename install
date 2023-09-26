@@ -134,6 +134,10 @@ do
 done < $tools_file
 echo "${L}${G}All Done${N}"
 sleep 3s
+
+# start options for choice one
+chmod +x options
+sudo ./options
     ;;
 
      2) 
@@ -155,6 +159,7 @@ sleep 3s
 
      ;;
 esac
+
 
 # config apache2 webserver
 echo "${L}${B}configuring apache2 webserver${N}"
