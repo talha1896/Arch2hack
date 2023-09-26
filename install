@@ -35,14 +35,6 @@ echo "${G}${L}[+] Starting process  ......${N}"
 sleep 3s
 
 ################### magic start from here #######################
-# replace pacman.conf file
-sudo rm /etc/pacman.conf
-if [ $? -eq 1 ];then
-exit 1
-else
-sudo cp pacman.conf /etc/
-fi
-
 # update Arch repo
 echo -e "${G}${L}[+]${N} Updating ${B}${L}Arch repo${N}"
   sudo pacman -Sy
