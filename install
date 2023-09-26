@@ -113,7 +113,12 @@ done < $pkgs_file
 sudo systemctl enable lxdm
 sudo systemctl enable NetworkManager.service
 
-      echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
+# Enable auto login
+# Get the current username
+current_user=$(whoami)
+ sed -i "2s/.*/autologin=$current_user/" "/etc/lxdm/lxdm.conf"
+
+     echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
       sleep 2s
       clear
 # install hacking tools
