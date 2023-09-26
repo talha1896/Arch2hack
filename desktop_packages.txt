@@ -24,7 +24,6 @@ xarchiver
 code
 onboard
 wget
-virtualbox
 tldr
 locate
 vim
