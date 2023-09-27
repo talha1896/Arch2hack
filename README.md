@@ -6,16 +6,21 @@ This script will convert simple Arch linux into fully hacking os
 
 ## Features
 
-- Install display,audio,hardware drivers
+- Install audio,video and hardware drivers
 - Install lxde Desktop with basic apps
 - Install mostly used hacking tools
-- Absolutly minimalistic
-- Options what to install 
+- Options what to install
 
+
+## Usage
+Before running this script it is recommended to Enable multilib repository. you can enable by
+- removing # inside multilib from pacman.conf file located at
+- /etc/pacman.conf
 
 ## Installation
 
 Install by running
+
 ```bash
 git clone https://github.com/talha1896/Arch2hack.git  
 cd Arch2hack
@@ -23,30 +28,6 @@ chmod +x install
 sudo ./install
 ```
     
-# Note
-Before running this script it is recommended to Enable multilib repository.
-you can enable by 
-- removing #comments from pacman.conf file located at 
-- /etc/pacman.conf 
-as sudo user.
-
-
-## Usage
-This script provide two options
-- {1} lxde Desktop + basic apps + hacking tools 
-- This option is useful for Arch minimal installation because it will install everything from scratch from drivers to fully working Desktop.
-
-- {2} hacking tools only
-- It wil install hacking tools only.suitable for other Arch base distros like manjaro or garuda.
-
-## Tips
-
-- Add your favourite packages in packages files or remove as you want
-
-- Change lxde desktop to any like kde or xfce in desktop_packages.txt
-
-
-
 ## Feedback
 
 If you have any feedback, please reach out to me at talhagit29@gmail.com
