@@ -9,7 +9,24 @@ B=$(tput setaf 33)
 N=$(tput sgr0)
 
 echo "${G}${L}[+] Optional steps  ......${N}"
-echo "${B}${L}[+] Do you want to anable apche server  ......${N}"
+
+# autologin
+echo "${B}${L}[+] Do you want to enable lxdm autologin  ......${N}"
+read -p "Enter your choice y/n:" choice
+case $choice in
+   y)
+    echo "${B}${L}Enter user name that you want to enable autologin${N}"
+    read -p "User name:" name
+    sed -i "3s/.*/autologin=$name/" "/etc/lxdm/lxdm.conf"
+echo "${G}${L}[+] Enabled  ......${N}"
+   ;;
+   n)
+   echo "${G}${L}[-] Disabled  ......${N}"
+   ;;
+esac
+
+# Apache server
+echo "${B}${L}[+] Do you want to enable apche server  ......${N}"
 read -p "Enter your choice y/n:" choice
 case $choice in
    y)

@@ -113,11 +113,6 @@ done < $pkgs_file
 sudo systemctl enable lxdm
 sudo systemctl enable NetworkManager.service
 
-# Enable auto login
-# Get the current username
-current_user=$(whoami)
- sed -i "2s/.*/autologin=$current_user/" "/etc/lxdm/lxdm.conf"
-
      echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
       sleep 2s
       clear
@@ -164,8 +159,8 @@ esac
 # config apache2 webserver
 echo "${L}${B}configuring apache2 webserver${N}"
 sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
-echo "${L}${B}Done${N}"
-echo "${L}${G}Everything done correctly.you can reboot your pc${N}"
+echo "${L}${B}All Done${N}"
+echo "${L}${G}Thanks for using this script.you can reboot your pc${N}"
 
 
 
