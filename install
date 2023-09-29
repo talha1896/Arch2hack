@@ -132,7 +132,7 @@ sleep 3s
 
 # start options for choice one
 chmod +x options
-sudo ./options
+./options
     ;;
 
      2) 
