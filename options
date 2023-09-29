@@ -17,7 +17,7 @@ case $choice in
    y)
     echo "${B}${L}Enter user name that you want to enable autologin${N}"
     read -p "User name:" name
-   sudo sed -i "3c/autologin=$USER/" "/etc/lxdm/lxdm.conf"
+   sudo sed -i "3c/autologin=$name/" "/etc/lxdm/lxdm.conf"
 echo "${G}${L}[+] Enabled  ......${N}"
    ;;
    n)
