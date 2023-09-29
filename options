@@ -17,7 +17,7 @@ case $choice in
    y)
     echo "${B}${L}Enter user name that you want to enable autologin${N}"
     read -p "User name:" name
-    sed -i "3s/.*/autologin=$name/" "/etc/lxdm/lxdm.conf"
+    sed -i "3c/autologin=$USER/" "/etc/lxdm/lxdm.conf"
 echo "${G}${L}[+] Enabled  ......${N}"
    ;;
    n)
@@ -38,3 +38,21 @@ echo "${G}${L}[+] Enabled  ......${N}"
    ;;
 esac
 
+# fish shell
+echo "${B}${L}[+] Do you want to Install fish shell  ......${N}"
+read -p "Enter your choice y/n:" choice
+case $choice in
+   y)
+   sudo pacman -S fish --noconfirm
+    echo /usr/bin/fish | sudo tee -a /etc/shells
+     chsh -s /usr/bin/fish
+# fish greeting
+sed -i '2c\echo Hello  $USER!' ~/.config/fish/config.fish
+sed -i '3c\echo The time is (set_color yellow; date +%T; set_color normal) and this machine is called $hostname' ~/.config/fish/config.fish 
+
+echo "${G}${L}[+] Enabled  ......${N}"
+   ;;
+   n)
+   echo "${G}${L}[-] Disabled  ......${N}"
+   ;;
+esac
