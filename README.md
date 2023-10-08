@@ -1,5 +1,6 @@
 ## Our Message
-Stop Israel killing innocent Muslims of palestine.
+Put an end to the unjust killing of innocent Muslims in Palestine by Israel and ensure that Palestine is granted their rightful rights.
+
 # Arch2hack
 
 This script will convert simple Arch linux into fully hacking os
