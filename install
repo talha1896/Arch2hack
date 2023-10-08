@@ -129,7 +129,7 @@ sleep 3s
 
     ;;
 2)
-echo "${L}${B}Choice is 1${N}"
+echo "${L}${B}Choice is 2${N}"
 sleep 2s
 clear
 # install drivers
@@ -175,7 +175,7 @@ chmod +x options
       clear
 
      3) 
-     echo "you chosed option 2"
+     echo "you chosed option 3"
      sleep 
 chmod +x hack_install
 ./hack_install
