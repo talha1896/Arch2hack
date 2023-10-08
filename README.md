@@ -33,7 +33,8 @@ chmod +x install
 This script provide two options 
 - (1) Install lxde desktop with basic apps,drivers, plus hacking tools.
 This option is specialy designed for Arch minimal installation only.
-- (2) Install hacking tools only. 
+- (2)  Install lxde desktop with basic apps,drivers only.Desighned for normal user.
+- (3) Install hacking tools only. 
 This option is designed for already configured systems like Manjaro,Garuda and other Arch derivatives.
 ## Feedback
 
