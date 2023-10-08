@@ -15,7 +15,7 @@ This script will convert simple Arch linux into fully hacking os
 
 
 ## Usage
-Before running this script it is recommended to Enable multilib repository. you can enable by
+Before running this script it is recommended to Enable multilib repository.If you chose option 1.you can enable by
 - removing # inside multilib from pacman.conf file located at
 - /etc/pacman.conf
 
