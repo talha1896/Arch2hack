@@ -1,0 +1,20 @@
+#!/bin/bash
+clear
+
+# color code
+L=$(tput bold)
+R=$(tput setaf 1)
+G=$(tput setaf 2)
+B=$(tput setaf 33)
+N=$(tput sgr0)
+
+# add black arch repo
+echo -e "${G}${L}[+]${N} ${G}${L}Installing black arch keyring${N}"
+curl -O https://blackarch.org/strap.sh
+echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
+chmod +x strap.sh
+sudo ./strap.sh
+sudo pacman -Syu --noconfirm
+echo -e "${G}${L}[+]${N} ${G}${L}Black arch repo installed succesfully${N}"
+sleep 9s
+clear
