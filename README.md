@@ -1,4 +1,5 @@
-
+## Our Message
+Stop Israel killing innocent Muslims of palestine.
 # Arch2hack
 
 This script will convert simple Arch linux into fully hacking os
