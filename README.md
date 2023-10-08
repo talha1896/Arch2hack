@@ -11,7 +11,7 @@ This script will convert simple Arch linux into fully hacking os
 - Install audio,video and hardware drivers
 - Install lxde Desktop with basic apps
 - Install mostly used hacking tools
-- Options what to install
+- 3 options for user flavours
 
 
 ## Usage
