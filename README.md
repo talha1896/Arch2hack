@@ -1,5 +1,5 @@
 ## Our Message
-Put an end to the unjust killing of innocent Muslims in Palestine by Israel and ensure that Palestine is granted their rightful rights.
+Put an end to the unjust killing of innocent Muslims in Palestine,Kashmir by Israel,India and ensure that both are granted their rightful rights.
 
 # Arch2hack
 
