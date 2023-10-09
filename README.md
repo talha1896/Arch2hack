@@ -1,4 +1,4 @@
-## Our Message ![image](https://github.com/talha1896/Arch2hack/assets/145143135/62dfd171-6dc0-4347-ac81-ae673c65ce20)
+## Our Message 
 
 
 Put an end to the unjust killing of innocent Muslims in Palestine,Kashmir by Israel,India and ensure that both are granted their rightful rights.
@@ -32,7 +32,7 @@ chmod +x install
 ./install
 ```
 ## Note
-This script provide two options 
+This script provide three options 
 - (1) Install lxde desktop with basic apps,drivers, plus hacking tools.
 This option is specialy designed for Arch minimal installation only.
 - (2)  Install lxde desktop with basic apps,drivers only.Desighned for normal user.
