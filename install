@@ -173,6 +173,7 @@ chmod +x options
      echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
       sleep 2s
       clear
+  ;;
 
      3) 
      echo "you chosed option 3"
