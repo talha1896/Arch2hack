@@ -121,6 +121,10 @@ do
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
 
+# config apache2 webserver
+echo "${L}${B}configuring apache2 webserver${N}"
+sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
+
 # start options for choice one
 chmod +x options
 ./options
@@ -191,16 +195,15 @@ do
   sudo pacman -S $tools --noconfirm
   echo "${L}${G}$tools Installed${N}"
 done < $tools_file
-echo "${L}${G}All Done${N}"
+
+# config apache2 webserver
+echo "${L}${B}configuring apache2 webserver${N}"
+sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
 sleep 3s
 
      ;;
 esac
 
-
-# config apache2 webserver
-echo "${L}${B}configuring apache2 webserver${N}"
-sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
 echo "${L}${B}All Done${N}"
 echo "${L}${G}Thanks for using this script.you can reboot your pc${N}"
 
