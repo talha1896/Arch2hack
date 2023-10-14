@@ -8,143 +8,178 @@ G=$(tput setaf 2)
 B=$(tput setaf 33)
 N=$(tput sgr0)
 
+######################## functions #########################
+# function for branding
+function call {
+    echo -ne "${L}${B}
+              -------------------------------------
+              |      Arch2hack by Talha           |
+              |                                   |   
+              | visit: github.com/talha1896       |                              
+              -------------------------------------
+              ${N}"
+}
+
+# functions for color codes
+# for red
+function red {
+    echo "${L}${R}$1${N}"
+}
+# for blue
+function blue {
+    echo "${L}${B}$1${N}"
+}
+# for green
+function green {
+    echo "${L}${G}$1${N}"
+}
+
+#########################################################################
+
+call
 # check is distribution is arch based
 file="/etc/os-release"
    if  grep -q "Arch\|Garuda\|Manjaro\|Endeavours" $file ; then
-  echo -e "${B}${L} [+] Arch${N} Linux found"
+  blue "[+] Arch Linux found"
 else
-    echo -e "${R}${L}you are not using${N} ${B}Arch${N} ${R}Linux.This script is only for${N} ${B}arch${N} ${R}based distributions${N}"
+    red "you are not using Arch Linux.This script is only for arch based distributions"
 exit 1  
 fi
 
 # check for internet connection
 ping -c 1 google.com &>/dev/null
 if [ $? -eq 0 ];then
-    echo -e  "${G}${L} [+] Internet connected ${N}"
+    green  "[+] Internet connected"
 sleep 2s
 clear
+call
 else   
-    echo -e "${G}${L}[-] Internet not connected ${N}"
+    red "[-] Internet not connected"
 exit 1
 fi
 
 # branding
-echo -e "${B}${L}Arch to hack script by ${G}${L}talha${N}" 
-echo -e "This script is going to convert ${B}${L}Arch${N} linux into ${R}${L}hacking os${N}"
-echo "${G}${L}[+] Starting process  ......${N}"
+blue "Arch to hack script by talha" 
+echo -e "This script is going to convert Arch linux into ${R}hacking os"
+echo "[+] Starting process  ......"
 sleep 3s
 
 ################### magic start from here #######################
 # update Arch repo
-echo -e "${G}${L}[+]${N} Updating ${B}${L}Arch repo${N}"
+blue "[+] Updating Arch repo"
   sudo pacman -Sy
 
 # dependencies for black arch repo
-echo -e "${G}${L}[+]${N} ${B}${L}checking dependices${N}"
+green "[+] checking dependices"
 sleep 2s
 
 # check curl
 if which curl &>/dev/null; then 
-echo -e "${G}${L}[+]${N} ${B}${L}curl found${N}"
+blue "[+] curl found"
 else 
-     echo -e "${G}${L}[-]${N} ${B}${L}curl not found${N}"
-     echo -e "${G}${L}[+]${N} ${B}${L}Installing${N}"
+     red  "[-] curl not found"
+     green "[+] Installing"
     sudo pacman -S curl --noconfirm
-echo -e "${G}${L}[+]${N} ${G}${L}Installed succesfully{N}"
+green "[+] Installed succesfully{N}"
 fi
 
-
+clear
+call
 
 # options
-echo -e "${G}${L}[+]${N} ${G}${L}Started process 2/3 ....${N}"
+blue "[+] Started process 2/3 ...."
 sleep 1s
-echo -e "${G}${L}what do you want to install?${N}"
-echo -e "${G}${L}[+]${N} ${B}${L}[1] Desktop + basic apps + hacking tools${N}"
+green "what do you want to install?"
+blue "[+] [1] Desktop + basic apps + hacking tools"
 echo "It will install lxde desktop and hacking tools.Recommended for arch minimal installation"
-echo -e "${G}${L}[+]${N} ${G}${L}[2]  Desktop + basic apps only${N}"
-echo -e "${G}${L}[+]${N} ${B}${L}[3] hacking tools only${N}"
+green "[+] [2]  Desktop + basic apps only"
+red "[+] [3] hacking tools only"
 read -p "Enter your choice 1/2/3:" choice
 case $choice in 
      1)
-echo "${L}${B}Choice is 1${N}"
+echo "Choice is 1"
 chmod +x hack_install
 ./hack_install
 sleep 2s
 clear
+call
 # install drivers
-echo "${L}${G}[+]${N} ${B}${L}Installing Drivers${N}"
+echo "[+] Installing Drivers"
 sleep 2s
 drivers_file="drivers.txt"
 while read -r drivers
 do 
   sudo pacman -S $drivers --noconfirm
-   echo "${L}${G}$drivers Installed${N}"
+   echo "$drivers Installed"
 done < $drivers_file
-      echo "${L}${G}[+]${N} ${B}${L}Installing Drivers completed${N}"
+      echo "[+] Installing Drivers completed"
       sleep 2s
       clear
 
 # install desktop
-  echo "${L}${G}[+]${N} ${B}${L}Installing Desktop apps${N}"
+  echo "[+] Installing Desktop apps"
   sleep 2s
 pkgs_file="desktop_packages.txt"
 while read -r pkgs
 do
   sudo pacman -S $pkgs --noconfirm
-  echo "${L}${G}$pkgs Installed${N}"
+  echo "$pkgs Installed"
 done < $pkgs_file
 
 # Enable services
 sudo systemctl enable lxdm
 sudo systemctl enable NetworkManager.service
 
-     echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
+     echo "[+] Installing Desktop completed"
       sleep 2s
       clear
+      call
 # install hacking tools
 tools_file="hacking_tools"
 while read -r tools
 do
   sudo pacman -S $tools --noconfirm
-  echo "${L}${G}$tools Installed${N}"
+  echo "$tools Installed"
 done < $tools_file
 
 # config apache2 webserver
-echo "${L}${B}configuring apache2 webserver${N}"
+echo "configuring apache2 webserver"
 sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
 
 # start options for choice one
 chmod +x options
 ./options
-echo "${L}${G}All Done${N}"
+echo "All Done"
 sleep 3s
 
     ;;
 2)
-echo "${L}${B}Choice is 2${N}"
+echo "Choice is 2"
 sleep 2s
 clear
+call
 # install drivers
-echo "${L}${G}[+]${N} ${B}${L}Installing Drivers${N}"
+echo "[+] Installing Drivers"
 sleep 2s
 drivers_file="drivers.txt"
 while read -r drivers
 do 
   sudo pacman -S $drivers --noconfirm
-   echo "${L}${G}$drivers Installed${N}"
+   echo "$drivers Installed"
 done < $drivers_file
-      echo "${L}${G}[+]${N} ${B}${L}Installing Drivers completed${N}"
+      echo "[+] Installing Drivers completed"
       sleep 2s
       clear
+      call
 
 # install desktop
-  echo "${L}${G}[+]${N} ${B}${L}Installing Desktop apps${N}"
+  echo "[+] Installing Desktop apps"
   sleep 2s
 pkgs_file="desktop_packages.txt"
 while read -r pkgs
 do
   sudo pacman -S $pkgs --noconfirm
-  echo "${L}${G}$pkgs Installed${N}"
+  echo "$pkgs Installed"
 done < $pkgs_file
 
 # Enable services
@@ -154,9 +189,10 @@ sudo systemctl enable NetworkManager.service
 chmod +x options
 ./options
 
-     echo "${L}${G}[+]${N} ${B}${L}Installing Desktop completed${N}"
+     echo "[+] Installing Desktop completed"
       sleep 2s
       clear
+      call
   ;;
 
      3) 
@@ -169,20 +205,16 @@ tools_file="hacking_tools"
 while read -r tools
 do
   sudo pacman -S $tools --noconfirm
-  echo "${L}${G}$tools Installed${N}"
+  echo "$tools Installed"
 done < $tools_file
 
 # config apache2 webserver
-echo "${L}${B}configuring apache2 webserver${N}"
+echo "configuring apache2 webserver"
 sudo sed -i '132c\LoadModule unique_id_module modules/mod_unique_id.so' /etc/httpd/conf/httpd.conf &>/dev/null
 sleep 3s
 
      ;;
 esac
 
-echo "${L}${B}All Done${N}"
-echo "${L}${G}Thanks for using this script.you can reboot your pc${N}"
-
-
-
-
+echo "All Done"
+echo "Thanks for using this script.you can reboot your pc"
