@@ -1,28 +1,7 @@
-# display server
 xorg
-
-# audio driver
 pulseaudio
-
-# desktop
-nordic-darker-theme 
-adwaita-icon-theme
-lxsession
-lxappearance
-lxde-common
-gpicview
-lxappearance
-lxde-common
-lxmusic
-lxpanel
-lxrandr
-lxterminal
-openbox
-
-# display manager default is lxdm
+lxde
 lxdm
-
-# basic apps
 pcmanfm
 firefox
 gnome-disk-utility
@@ -32,8 +11,6 @@ code
 onboard
 network-manager
 network-manager-applet
-
-# terminal utilities
 htop
 neofetch
 wget
