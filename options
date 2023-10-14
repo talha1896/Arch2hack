@@ -26,7 +26,7 @@ echo "${G}${L}[+] Enabled  ......${N}"
 esac
 
 # Apache server
-echo "${B}${L}[+] Do you want to enable apche server  ......${N}"
+echo "${B}${L}[+] Do you want to enable apche server (For option 1 or 3)  ......${N}"
 read -p "Enter your choice y/n:" choice
 case $choice in
    y)
@@ -48,7 +48,7 @@ case $choice in
      chsh -s /usr/bin/fish
 # fish greeting
 sed -i '2c\echo Hello  $USER!' ~/.config/fish/config.fish
-sed -i '3c\echo The time is (set_color yellow; date +%T; set_color normal) and this machine is called $hostname' ~/.config/fish/config.fish 
+sed -i '3c\echo The time is (set_color yellow; date +%T; set_color normal) and you are using $hostname' ~/.config/fish/config.fish 
 
 echo "${G}${L}[+] Enabled  ......${N}"
    ;;
