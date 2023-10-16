@@ -56,3 +56,27 @@ echo "${G}${L}[+] Enabled  ......${N}"
    echo "${G}${L}[-] Disabled  ......${N}"
    ;;
 esac
+
+# download draula theme
+echo "${B}${L}[+] Do you want to download dracula themes.Later you can install with lxappearance.${N}"
+read -p "Enter your choice y/n:" choice
+case $choice in
+   y)
+   wget https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula.tar.xz
+tar -xvf Dracula.tar.xz
+sudo cp -r Dracula Dracula-alt-style Dracula-slim Dracula-slim-standard-buttons Dracula-standard-buttons /usr/share/themes
+wget https://codeload.github.com/dracula/openbox/zip/refs/heads/master\openbox-master.zip
+unzip openbox-master.zip
+cd openbox-master 
+sudo cp -r Dracula Dracula-withoutBorder /usr/share/themes
+cd ..
+wget https://github.com/vinceliuice/vimix-icon-theme/archive/refs/tags/2023-06-26.zip
+unzip vimix-icon-theme-2023-06-26.zip
+sudo cp -r  vimix-icon-theme-2023-06-26 /usr/share/icons
+echo "${G}${L}[+] Added to theme directory.${N}"
+
+   ;;
+   n)
+   echo "${G}${L}[-] ok ${N}"
+   ;;
+esac
